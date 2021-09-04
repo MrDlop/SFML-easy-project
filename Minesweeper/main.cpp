@@ -36,13 +36,13 @@ void generationField() {
 			fieldLogicGen[i][j] = -1;
 		}
 	}
-	// Бомбы
+	// ГЃГ®Г¬ГЎГ»
 	for (int i = 0, n, k; i < 20; ++i) {
 		n = 1 + rand() % h, k = 1 + rand() % h;
 		if (fieldLogicGen[n][k] == 9) --c;
 		fieldLogicGen[n][k] = 9;
 	}
-	//заполнение цифрами
+	//Г§Г ГЇГ®Г«Г­ГҐГ­ГЁГҐ Г¶ГЁГґГ°Г Г¬ГЁ
 	for (int i = 1; i < H-1; ++i) {
 		for (int j = 1; j < W-1; ++j) {
 			if (fieldLogicGen[i][j] != 9) {
@@ -56,7 +56,7 @@ void generationField() {
 			}
 		}
 	}
-	//перенос в массив без невидимых границ
+	//ГЇГҐГ°ГҐГ­Г®Г± Гў Г¬Г Г±Г±ГЁГў ГЎГҐГ§ Г­ГҐГўГЁГ¤ГЁГ¬Г»Гµ ГЈГ°Г Г­ГЁГ¶
 	for (int i = 0; i < HG; ++i) {
 		for (int j = 0; j < WG; ++j) {
 			fieldLogic[i][j] = fieldLogicGen[i + 1][j + 1];
